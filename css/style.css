@@ -1,0 +1,265 @@
+@charset "utf-8";
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} 
+body{
+    background:#e1e5f0;
+    font-size:12px; 
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    font-family: 'Microsoft Yahei',verdana;
+    line-height: 1.666;
+    color: #222;
+    display: block;
+    min-width: 960px;
+    /*position: relative;*/
+    } 
+
+ul,ol{list-style-type:none;} 
+select,input,img,select{vertical-align:middle;} 
+ 
+a{text-decoration:none;} 
+a:link{color:#c1c4cb;} 
+a:visited{color:#fff;} 
+a:hover,a:active,a:focus{color:#fff;text-decoration:underline;} 
+
+#top-adv{
+    width: 100%;
+    /*min-width: 160px;*/
+    height: 60px;
+    background-position: center;
+    background-image: url("images/adv.png");
+    display: none; /*控制广告显示*/
+}
+#close-adv{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #c1c4cb;
+    background:0;
+    font-size: 28px;
+    line-height: 28px;
+    color: #c1c4cb;
+    text-align: center;
+    float: right;
+    display: block;
+    position: relative;
+    right: 20px;
+    top: 15px;
+}
+.top-account-info{
+    background-color: #478de4;
+    width: 100%;
+    /*min-width: 160px;*/
+    margin: 0 auto;
+    height: 51px;
+    /*border-bottom: 1px solid #478de4;*/
+    box-shadow: 0 0 2px 2px rgba(190, 197, 212, 0.9);
+}
+.top-account-info .logo{
+    width: 205px;
+    height: 45px;
+    float: left;
+    margin-left: 30px;
+}
+.account{
+    float: left;
+    margin: 9px 10px;
+    line-height: 16px;
+}
+.account ul li{
+     color: #c1c4cb;
+}
+.account ul li strong{
+    color: #30343f;
+}
+.help{
+    float: right;
+    line-height: 50px;
+    padding-right:30px;
+}
+.help ul{
+    float: left;
+    font-size: 14px;
+    padding-left: 5px;
+}
+.help ul span,.account ul span{
+    padding: 0 5px;
+    color: #c1c4cb;
+}
+
+.help ul li,.account ul li{
+    display:inline;
+    color: #c1c4cb;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    /*min-width: 160px;*/
+    background-color: deeppink;
+
+}
+.left-nav-box{
+    background-color: #30343f;
+    width: 200px;
+    float: left;
+    height: 100%;
+    margin: 0 auto;
+    color: #c1c4cb;
+    position: absolute;
+    left: 0;
+}
+.search-bar{
+    width: 200px;
+    height: 70px;
+    border-bottom: 1px solid #424652;
+}
+.seacrh-form{
+    padding:18px 13px;
+}
+.search-input{
+    background-color: #424652;
+    border: 0;
+    border-radius: 2px 0 0 2px;
+    height: 34px;
+    width: 130px;
+    color: #c1c4cb;   
+    margin: 0;
+    padding: 0 5px;
+}
+.search-button{
+    border-radius: 0 2px 2px 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 34px;
+    height: 34px;
+    background:#424652 url("images/search.png") no-repeat center center;
+
+}
+.right-content-box{
+    width: 100%;
+    background-color: gray;
+    margin: 10px 0 0 10px;
+    float: right;
+    height: 100%;
+    color: #c1c4cb;
+    position: absolute;
+    left: 200px;
+    border-radius: 3px;
+}
+.home{
+    background-color: fuchsia;
+    width: 100%;
+    height: 100%;
+}
+.tab-box{
+    display: none;
+    background-color: darksalmon;
+}
+
+/*控制导航显示*/
+#right-nav{
+    display: none; 
+    background-color: dimgray;
+    width: 100%;
+    height: 30px;
+}
+
+.menu-box{
+    /*background-color: teal;*/
+    width: 200px;
+    height: auto;
+    max-height: 65%;
+    overflow-y:auto; 
+    overflow-x:hidden; 
+    border-bottom: 1px solid #424652;
+}
+.menu-box::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #424652;
+}
+
+.menu-box::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: #424652;
+}
+
+.menu-box::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #c1c4cb;
+}
+
+.menu-child-list{
+    line-height: 34px;
+    font-size: 14px;
+    width: 200px;
+    position: relative;
+    left: -45px;
+}
+.menu-child-list li{
+    padding-left: 45px;
+}
+.menu-child-list>li:hover{
+    color: #fff;
+    background-color:rgba(66,70,82,0.1);
+}
+.menu-box>ul>li{
+    line-height: 34px;
+    font-size: 14px;
+    height: 34px;
+    width: 200px;
+    padding-left: 45px;
+    overflow: hidden;
+}
+.menu-child-list{
+    background-color: #242831;
+}
+.menu-box>ul>li:hover{
+    background-color: #478de4;
+}
+.menu-list1{
+    background: url("images/menu-list1.png") no-repeat 15px 7px,url("images/li-down.png") no-repeat 170px 11px;
+}
+.menu-list0{
+    background:url("images/menu-list1.png") no-repeat 15px 7px,url("images/li-up.png") no-repeat 170px 11px;
+}
+.menu-list2{
+    background: url("images/menu-list2.png") no-repeat 15px 7px,url("images/li-down.png") no-repeat 170px 11px;
+}
+.menu-list3{
+    background: url("images/menu-list3.png") no-repeat 15px 7px,url("images/li-down.png") no-repeat 170px 11px;
+}
+.menu-list4{
+    background: url("images/menu-list4.png") no-repeat 15px 7px,url("images/li-down.png") no-repeat 170px 11px;
+}
+.menu-list5{
+    background: url("images/menu-list5.png") no-repeat 15px 7px,url("images/li-down.png") no-repeat 170px 11px;
+}
+.bottom-tips ul{
+    margin-top: 10px;
+}
+
+.bottom-tips ul li{
+    width: 200px;
+    height: 20px;
+    padding-left: 45px;
+    line-height: 20px;
+}
+.bottom-tips ul li span{
+    width: 10px;
+    height: 10px;
+    display: block;
+    float: left;
+    position: relative;
+    top: 5px;
+    left: -10px;
+    background: url("images/tips.png") no-repeat;
+}
+.bottom-tips ul .tips-item2 span{background-position: -10px 0;}
+.bottom-tips ul .tips-item3 span{background-position: -20px 0;}
+.bottom-tips ul .tips-item4 span{background-position: -30px 0;}
+.bottom-tips ul .tips-item5 span{background-position: -40px 0;}
+
