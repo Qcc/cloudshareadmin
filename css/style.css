@@ -2,13 +2,14 @@
 body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} 
 body{
     background:#e1e5f0;
+    /*background:#89b5e9;*/
     font-size:12px; 
-    overflow: hidden;
+    overflow: scroll;
     height: 100%;
     width: 100%;
     font-family: 'Microsoft Yahei',verdana;
     line-height: 1.666;
-    color: #222;
+    /*color: #222;*/
     display: block;
     min-width: 960px;
     /*position: relative;*/
@@ -48,10 +49,8 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
 .top-account-info{
     background-color: #478de4;
     width: 100%;
-    /*min-width: 160px;*/
     margin: 0 auto;
     height: 51px;
-    /*border-bottom: 1px solid #478de4;*/
     box-shadow: 0 0 2px 2px rgba(190, 197, 212, 0.9);
 }
 .top-account-info .logo{
@@ -95,15 +94,17 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
     width: 100%;
     height: 100%;
     /*min-width: 160px;*/
-    background-color: deeppink;
+    /*background-color: deeppink;*/
 
 }
 .left-nav-box{
     background-color: #30343f;
-    width: 200px;
+    /*background-color: #fff;*/
+    width: 14%;
+    min-width: 200px;
     float: left;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 auto ;
     color: #c1c4cb;
     position: absolute;
     left: 0;
@@ -137,25 +138,81 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
 
 }
 .right-content-box{
-    width: 100%;
-    background-color: gray;
-    margin: 10px 0 0 10px;
+    width: 85%;
+    min-width:750px;
+    /*border: 1px solid red;*/
+    background-color: #e1e5f0;
     float: right;
     height: 100%;
-    color: #c1c4cb;
     position: absolute;
     left: 200px;
     border-radius: 3px;
 }
 .home{
-    background-color: fuchsia;
+    display: none;
     width: 100%;
     height: 100%;
+    margin-bottom: 10px;
+    border-radius: inherit;
+    color: #5a6779;
 }
-.tab-box{
-    display: none;
-    background-color: darksalmon;
+/*控制当前页面是否是首页*/
+.home-active{
+    display: block;
 }
+.home-left{
+    width: 750px;
+}
+.home-right{
+    width: 380px;
+}
+.home-pub{
+    float: left;
+    height: 100%;
+    border-radius: inherit;
+    margin: 10px 0 0 10px;
+}
+.home-content-pub{
+    height: 100%;
+    border-radius: inherit;
+    border-bottom: 1px solid #cdd1dc;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.welcomeinfo{
+    height: 134px;
+}
+.monitor{
+    /*height: 366px;*/
+    height: 426px;
+    margin-bottom:5px;
+}
+.copyright-box{
+    height: 225px;
+}
+.reports{
+    /*height: 250px;*/
+    height: 280px;
+}
+.new-member{
+    /*height: 250px;*/
+    height: 280px;
+}
+.pub-title{
+    width: 100%;
+    height: 55px;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid #dadfed;
+    line-height: 55px;
+    text-indent: 10px;
+}
+.copyright-box span{
+    margin: 0 10px; 
+}
+.copyright-box a{
+    color: #5a6779;
+}
+
 
 /*控制导航显示*/
 #right-nav{
@@ -263,3 +320,21 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
 .bottom-tips ul .tips-item4 span{background-position: -30px 0;}
 .bottom-tips ul .tips-item5 span{background-position: -40px 0;}
 
+
+.tab-box{
+    width: 100%;
+    min-width: 750px;
+    height: 100%;
+    margin: 10px 10px;
+    background-color: saddlebrown;
+}
+.tab-box-active{
+    display: block;
+}
+
+.tab-box>div{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: none;
+}

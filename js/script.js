@@ -45,10 +45,7 @@ function addMenuEvent() {
         }
     });
 }
-//获取到LI后的操作
-function openMenuToggle(element) {
-    
-}
+ 
  
 
 
