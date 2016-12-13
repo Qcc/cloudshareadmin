@@ -6,52 +6,68 @@
         <style>
              html, body{
                  height: 100%;
+                 width: 100%;
                  margin: 0px;
                  padding: 0px; 
-                 min-width: 1200px;
                  position: relative;
             }
-             
             .top{
                 background-color: darkred;
                 width: 100%;
                 height: 50px;
-                position: absolute;
-                z-index: 1;
             }
             .content{
                 background-color: darkcyan;
                 width: 100%;
-                height: 100%;
-                box-sizing: border-box;
-                padding-top: 50px;
                 position: absolute;
-                top:0;
+                top: 50px;
                 left: 0;
+                right: 0;
+                bottom: 0;
             }
-           
             .left{
                 background-color: khaki;
                 width:200px;
+                height: 100%;
                 float: left;
-                height:100%;
+                 
+                
             }
             .right{
                 background-color: lightcoral;
+                float: left;
+                position: absolute;
+                top: 0;
+                left: 200px;
+                right: 0;
+                bottom: 0;
+                margin: 10px;
+            }
+            /*.right-div{
+                box-sizing: border-box;
                 width: 100%;
                 height: 100%;
-                border: 2px solid red;
-                box-sizing: border-box;
+                background-color: lime;
+                border: 10px solid #eee;
+                margin-top: 10px;
             }
+            .left-div{
+                width: 180px;
+                height: 200px;
+                margin: 10px;
+                background-color: royalblue;
+            }*/
         </style>
     </head>
     <body>
-      
-            <div class="top">top</div>
-            <div class="content">
-                <div class="left">left<br />left<br />left<br />left<br />left<br />left<br />left<br />left<br /></div>
-                <div class="right">righ <br />righ <br />righ <br />righ <br />righ <br />righ <br />righ <br />righ <br /></div>
-            </div>
-         
+        <div class="top">top</div>
+        <div class="content">
+            <div class="left">
+                <!--<div class="left-div">dsfdsfsdf</div>-->
+                </div>
+            <div class="right">
+                <!--<div class="right-div">dsfdsfsdf</div>-->
+                </div>
+        </div>
     </body>
 </html>

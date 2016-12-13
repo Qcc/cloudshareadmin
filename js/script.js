@@ -1,67 +1,76 @@
 window.onload=function () {
-    addMenuEvent();
+    toggleMenu();
     closeAdv();
+    showHome(); 
+}
+
+function showHome() {
+    var showHome = getEleByClass("showhome")[0];
+    var home = getEleById("home");
+    eventUtil.addHandler(showHome,"click",function (e) {
+        var event = eventUtil.getEvent(e);
+        home.className += "active";
+        console.log(home.className);
+        eventUtil.preventDefault(event);
+    })
 }
 
 //关闭顶部广告按钮
 function closeAdv(){
-    var close = getElement("close-adv");
+    var close = getEleById("close-adv");
     eventUtil.addHandler(close,"click",function () {
-        getElement("top-adv").style.display = "none";
+        getEleById("top-adv").style.display = "none";
         console.log(close);
     });
 }
 
 //打开或者关闭菜单列表
-function addMenuEvent() {
-    var element = getElement("menu-list");
-    eventUtil.addHandler(element,"click",function (e) {
+function toggleMenu() {
+    var option = getEleByClass("option");
+    var subMenu = getEleByClass("subMenu");
+    eventUtil.addHandler(option[0],"click",function (e) {
+        var subMenu1=getEleById("sub-menu1");
         var event = eventUtil.getEvent(e);
-        var element = eventUtil.getElement(event);
-        if(element && element.nodeName.toUpperCase() == "LI"){
-            var childNodes = element.childNodes;
-            console.log(childNodes);
-             for(var i=0;i<childNodes.length;i++){
-                 console.log(childNodes[i].nodeType);
-                 if(childNodes[i].nodeType == 1){
-                     var len =1;
-                     for(var n=0;n<childNodes[i].childNodes.length;n++){
-                         if(childNodes[i].childNodes[n].nodeType == 1){
-                             len += 1;
-                         }
-                     }
-                     console.log("len:" + len);
-                     console.log(element.offsetHeight);
-                     if(element.offsetHeight == 34){
-                        element.style.height = (len * 34) + 'px'; 
-                        }else{
-                            element.style.height = 34 + 'px'; 
-                     }
-                 }else{
-                     console.log(element.innerHTML);
-                 }
-             }
-            
-        }
-    });
+        var target =eventUtil.getElement(event);
+        target.style.backgroundImage="url('images/li-down.png')";
+        toggleClass(subMenu1,"open");
+        
+    });  
+    eventUtil.addHandler(option[1],"click",function (e) {
+        var subMenu1=getEleById("sub-menu2");
+        toggleClass(subMenu1,"open");
+    });  
+    eventUtil.addHandler(option[2],"click",function (e) {
+        var subMenu1=getEleById("sub-menu3");
+        toggleClass(subMenu1,"open");
+    });  
+    eventUtil.addHandler(option[3],"click",function (e) {
+        var subMenu1=getEleById("sub-menu4");
+        toggleClass(subMenu1,"open");
+    });  
+    eventUtil.addHandler(option[4],"click",function (e) {
+        var subMenu1=getEleById("sub-menu5");
+        toggleClass(subMenu1,"open");
+    });  
 }
- 
- 
-
 
 //根据ID获得html元素
-function getElement(id) {
+function getEleById(id) {
     var element = document.getElementById(id);
     return element;
 }
 
 //根据class获得html元素集合
-function getClassEle(className) {
+function getEleByClass(className) {
     var elements = document.getElementsByClassName(className);
-    return elements;
+    var eleArr=[]
+    for(var i=0;i<elements.length;i++){
+        eleArr.push(elements[i]);
+    }
+    return eleArr;
 }
 //根据标签获得html元素集合
-function getTagEle(tagName) {
+function getEleByTag(tagName) {
     var elements = document.getElementsByClassName(className);
     return elements;
 }
@@ -116,3 +125,29 @@ var eventUtil = {
         }
     }
 }
+
+//判断元素是否有class
+function hasClass(obj, cls) {
+    console.log(obj);
+    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+} 
+//添加class
+function addClass(obj, cls) {  
+    if (!this.hasClass(obj, cls)) obj.className += " " + cls;  
+}
+//移除class
+function removeClass(obj, cls) {  
+    if (hasClass(obj, cls)) {  
+        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
+            obj.className = obj.className.replace(reg, ' ');  
+        }  
+}
+//切换class
+function toggleClass(obj,cls){ 
+    console.log(obj);
+    if(hasClass(obj,cls)){  
+        removeClass(obj, cls);  
+    }else{  
+        addClass(obj, cls);  
+    }  
+}  
