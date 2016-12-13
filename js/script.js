@@ -1,7 +1,8 @@
 window.onload=function () {
     toggleMenu();
     closeAdv();
-    showHome(); 
+    showHome();
+    showContent(); 
 }
 
 function showHome() {
@@ -9,8 +10,9 @@ function showHome() {
     var home = getEleById("home");
     eventUtil.addHandler(showHome,"click",function (e) {
         var event = eventUtil.getEvent(e);
-        home.className += "active";
-        console.log(home.className);
+        var activeEle = getEleByClass("active")[0];
+            removeClass(activeEle,"active")
+            addClass(home,"active");
         eventUtil.preventDefault(event);
     })
 }
@@ -20,7 +22,6 @@ function closeAdv(){
     var close = getEleById("close-adv");
     eventUtil.addHandler(close,"click",function () {
         getEleById("top-adv").style.display = "none";
-        console.log(close);
     });
 }
 
@@ -30,28 +31,61 @@ function toggleMenu() {
     var subMenu = getEleByClass("subMenu");
     eventUtil.addHandler(option[0],"click",function (e) {
         var subMenu1=getEleById("sub-menu1");
-        var event = eventUtil.getEvent(e);
-        var target =eventUtil.getElement(event);
-        target.style.backgroundImage="url('images/li-down.png')";
+        toggleBackgrodundImg(e);
         toggleClass(subMenu1,"open");
         
     });  
     eventUtil.addHandler(option[1],"click",function (e) {
+        var event = eventUtil.getEvent(e);
+        var target = eventUtil.getElement(event);
         var subMenu1=getEleById("sub-menu2");
         toggleClass(subMenu1,"open");
+        toggleBackgrodundImg(e);
     });  
     eventUtil.addHandler(option[2],"click",function (e) {
         var subMenu1=getEleById("sub-menu3");
         toggleClass(subMenu1,"open");
+        toggleBackgrodundImg(e);
     });  
     eventUtil.addHandler(option[3],"click",function (e) {
         var subMenu1=getEleById("sub-menu4");
         toggleClass(subMenu1,"open");
+        toggleBackgrodundImg(e);
     });  
     eventUtil.addHandler(option[4],"click",function (e) {
         var subMenu1=getEleById("sub-menu5");
         toggleClass(subMenu1,"open");
+        toggleBackgrodundImg(e);
     });  
+}
+//切换背景图片
+function toggleBackgrodundImg(e) {
+    var event = eventUtil.getEvent(e);
+    var target =eventUtil.getElement(event);
+    var backImg = ["css/images/li-up.png","css/images/li-down.png"];
+        if(target.style.backgroundImage.indexOf("up") != -1){
+                target.style.backgroundImage="url(" + backImg[1] + ")";
+            }else{
+                target.style.backgroundImage="url(" + backImg[0] + ")";
+            }
+}
+
+//菜单右侧内容实现
+function showContent() {
+    var menu = getEleById("menu");
+    eventUtil.addHandler(menu,"click",function (e) {
+        var event=eventUtil.getEvent(e);
+        var target=eventUtil.getElement(event);
+        var content = getEleByClass("content-item");
+        for(var i=0;i<content.length;i++){
+        console.log(target.id + content[i].id);
+            if(content[i].id == target.id){
+                var activeEle = getEleByClass("active")[0];
+                removeClass(activeEle,"active")
+                addClass(content[i],"active");
+            }
+        }
+    });
 }
 
 //根据ID获得html元素
@@ -128,7 +162,6 @@ var eventUtil = {
 
 //判断元素是否有class
 function hasClass(obj, cls) {
-    console.log(obj);
     return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
 } 
 //添加class
@@ -144,7 +177,6 @@ function removeClass(obj, cls) {
 }
 //切换class
 function toggleClass(obj,cls){ 
-    console.log(obj);
     if(hasClass(obj,cls)){  
         removeClass(obj, cls);  
     }else{  
