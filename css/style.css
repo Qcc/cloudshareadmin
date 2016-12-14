@@ -440,7 +440,7 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
     border-radius: 5px;
     outline:none;
     padding: 0 10px 0 30px;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     color: #242831;
     background-color: #fff;
     background-image: url("images/verification.png");
@@ -450,6 +450,7 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
 .verimg{
     width: 100px;
     height: 30px;
+    margin-left: 15px;
 }
 .input-label{
     height: 30px;
@@ -475,6 +476,7 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
 .input-submit:hover{
     background-color: #8bbf9d;
 }
+
 /*//新用户注册*/
 .registered{
     width: 400px;
@@ -492,13 +494,13 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
     color: #fff;
 }
 .reg-content{
-    margin: 10px auto 0;
+    margin: 5px auto 0;
     text-align: center;
 }
 .reg-name{
     line-height: 28px;
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .reg-form{
     margin: 0 auto;
@@ -512,6 +514,49 @@ a:hover,a:active,a:focus{color:#fff;text-decoration:underline;}
     height: 30px;
     padding: 0 10px 0 30px;
     margin: 10px 0;
+}
+.reg-form>.reg-account{
+    background-image: url("images/username.png");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+}
+.reg-form>.reg-password{
+    background-image: url("images/password.png");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+}
+.reg-form>.reg-company{
+    background-image: url("images/reg-company.png");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+}
+.reg-form>.reg-email{
+    background-image: url("images/reg-email.png");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+}
+.reg-form>.reg-tel{
+    background-image: url("images/reg-tel.png");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+}
+.reg-form>.reg-code{
+    background-image: url("images/reg-code.png");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+}
+.reg-form>.reg-ver{
+    background-image: url("images/verification.png");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    width: 100px;
+    margin-left:-28px; 
+}
+.reg-form>.input-submit{
+    background-image: url("images/input-submit.png");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    color: #fff;
 }
 /*//控制登录和注册*/
 .active{
