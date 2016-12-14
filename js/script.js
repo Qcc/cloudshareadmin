@@ -3,19 +3,49 @@ window.onload=function () {
     closeAdv();
     showHome();
     showContent(); 
+    backAnimator();
 }
 
+//展示主页
 function showHome() {
-    var showHome = getEleByClass("showhome")[0];
-    var home = getEleById("home");
-    eventUtil.addHandler(showHome,"click",function (e) {
+    showModel("update","update");
+    showModel("about-us","about-us");
+    showModel("showhome","home");
+    showModel("settings","settings");
+    showModel("feedback","feedback");
+    showModel("help-center","help-center");
+}
+
+//主页、设置、意见反馈、帮助中心、更新说明、关于
+function showModel(className,id) {
+    var ele = getEleByClass(className)[0];
+    var model = getEleById(id);
+    eventUtil.addHandler(ele,"click",function (e) {
         var event = eventUtil.getEvent(e);
         var activeEle = getEleByClass("active")[0];
+        var selected = getEleByClass("selected")[0];
+        var open = getEleByClass("open");
+        var option = getEleByClass("option");
             removeClass(activeEle,"active")
-            addClass(home,"active");
+            addClass(model,"active");
+            //重置所有选中的子菜单项
+            if(selected){
+                removeClass(selected,"selected");
+            }
+            //关闭所有已打开的菜单
+            if(open){
+                for(var i = 0 ;i<open.length;i++){
+                removeClass(open[i],"open");
+                }
+            }
+            //重置菜单箭头方向
+            for(var i =0;i<option.length;i++){
+                option[i].style.backgroundImage="url(css/images/li-down.png)";
+            }
         eventUtil.preventDefault(event);
-    })
+    });
 }
+
 
 //关闭顶部广告按钮
 function closeAdv(){
@@ -78,9 +108,13 @@ function showContent() {
         var target=eventUtil.getElement(event);
         var content = getEleByClass("content-item");
         for(var i=0;i<content.length;i++){
-        console.log(target.id + content[i].id);
-            if(content[i].id == target.id){
+            if(("menu-"+content[i].id) == target.id){
                 var activeEle = getEleByClass("active")[0];
+                var selected = getEleByClass("selected")[0];
+                if(selected){
+                    removeClass(selected,"selected");
+                }
+                addClass(target,"selected");
                 removeClass(activeEle,"active")
                 addClass(content[i],"active");
             }
@@ -183,3 +217,4 @@ function toggleClass(obj,cls){
         addClass(obj, cls);  
     }  
 }  
+
