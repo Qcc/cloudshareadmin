@@ -3,7 +3,6 @@ window.onload=function () {
     closeAdv();
     showHome();
     showContent(); 
-    backAnimator();
 }
 
 //展示主页

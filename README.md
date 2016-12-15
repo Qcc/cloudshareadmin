@@ -1,2 +1,0 @@
-# cloudshareadmin
-admin
